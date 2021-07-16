@@ -8,6 +8,7 @@ var mqtt = require('mqtt');
 // Your Channel access token (long-lived) 
 const CH_ACCESS_TOKEN = 'MFdCgXD+Spm7P/aZR+2wmZlfD+fcjyvTBfbbzUmooqQJK0ZAwjUtWA59qKhc/MrTQJ+cdZ8WCN4Zq4jaAl2QwNbzVN+VR7x/+4vAA96EF9OUNcPX0ptS6i7TB6KK1cCyEKy5+8KmuepRaLhvKdrM4AdB04t89/1O/w1cDnyilFU=';
 
+
 // MQTT Host
 var mqtt_host = 'soldier.cloudmqtt.com';
 
@@ -44,11 +45,11 @@ app.post('/webhook', (req, res) => {
   console.log(typeof sender, typeof text)
   // console.log(req.body.events[0])
 
-  if (text === '1' || text === 'เปิด' || text === 'relay1_on' || text === 'on') {
+  if (text === '1' || text === 'เปิด' || text === 'on') {
     // LED On
     ledOn(sender, text)
   }
-  else if (text === '0' || text === 'ปิด' || text === 'relay1_off' || text === 'off') {
+  else if (text === '0' || text === 'ปิด' || text === 'off') {
     // LED Off
     ledOff(sender, text)
   }
@@ -173,7 +174,6 @@ function ledOff (sender, text) {
       });
       
 
-      
       // publish a message to a topic
       client.publish(mqtt_topic, 'relay1_ff', function() {
           console.log("Message is published");

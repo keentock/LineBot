@@ -10,7 +10,7 @@ const CH_ACCESS_TOKEN = 'MFdCgXD+Spm7P/aZR+2wmZlfD+fcjyvTBfbbzUmooqQJK0ZAwjUtWA5
 
 
 // MQTT Host
-var mqtt_host = 'soldier.cloudmqtt.com';
+var mqtt_host = 'mqtt://soldier.cloudmqtt.com';
 
 // MQTT Topic
 var mqtt_topic = '/ESP/LED';
@@ -18,7 +18,7 @@ var mqtt_topic = '/ESP/LED';
 // MQTT Config
 var options = {
     port: 11414,
-    host: 'soldier.cloudmqtt.com',
+    host: 'mqtt://soldier.cloudmqtt.com',
     clientId: 'mqttjs_' + Math.random().toString(16).substr(2, 8),
     username: 'bhvvkjjh',
     password: 'ImRDZ5YLGFVt',
